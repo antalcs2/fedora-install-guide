@@ -106,6 +106,6 @@ mv Fonts/ SF\ Pro/ # rename
 - Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries) - download Releases, in folder execute `./mangohud-setup.sh install`, then copy `MangoHud.conf` into `~/.config/MangoHud`
 - Wine: [Wine Dependency Hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
 - ProtonUp-Qt
-- Steam, Lutris
+- Steam, Lutris - CS2 launch options: `mangohud %command% -allow_third_party_software`
 - Brave, Spotify
 - JetBrains
