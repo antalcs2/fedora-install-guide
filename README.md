@@ -97,3 +97,4 @@ mv Fonts/ SF\ Pro/ # rename
 ```
 
 ## Install apps
+- Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries) - download Releases, in folder execute `./mangohud-setup.sh install`, then copy `MangoHud.conf` into `~/.config/MangoHud`
