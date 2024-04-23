@@ -17,6 +17,10 @@ sudo nano /etc/gdm/custom.conf
 # uncomment, and then add: DefaultSession=gnome-xorg.desktop
 ```
 
+## Toggle grub menu to select kernel version
+- show: `sudo grub2-editenv - unset menu_auto_hide`
+- hide: `sudo grub2-editenv - set menu_auto_hide=1`
+
 ## RPM Fusion
 - https://rpmfusion.org/Configuration
 - `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
@@ -35,6 +39,7 @@ git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
 cd rtl*
 sudo make dkms_install
 ```
+https://tutorialforlinux.com/2023/03/08/step-by-step-fedora-38-rtl8812au-driver-installation/2/
 
 ## NVIDIA
 - https://rpmfusion.org/Howto/NVIDIA
@@ -98,3 +103,4 @@ mv Fonts/ SF\ Pro/ # rename
 
 ## Install apps
 - Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries) - download Releases, in folder execute `./mangohud-setup.sh install`, then copy `MangoHud.conf` into `~/.config/MangoHud`
+- Wine: [Wine Dependency Hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
