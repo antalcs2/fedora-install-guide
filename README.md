@@ -34,10 +34,11 @@ sudo nano /etc/gdm/custom.conf
 
 ## Connect to Internet
 https://github.com/aircrack-ng/rtl8812au
+This has to be done with every kernel update, dkms seems to not be working properly:
 ```sh
 git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
 cd rtl*
-sudo make dkms_install
+sudo make && make install
 ```
 https://tutorialforlinux.com/2023/03/08/step-by-step-fedora-38-rtl8812au-driver-installation/2/
 
@@ -88,7 +89,7 @@ User Themes
 Window title is back
 ```
 - create .themes, .fonts, .icons folders in /home
-- theme: WhiteSur - [gnome-look](https://www.gnome-look.org/p/1403328), [github](https://github.com/vinceliuice/WhiteSur-gtk-theme)
+- theme: WhiteSur - [gnome-look](https://www.gnome-look.org/p/1403328), [github](https://github.com/vinceliuice/WhiteSur-gtk-theme) (To change the activities icon on the left side of the top bar, modify the `Whitesur/Whitesur-Dark/gnome-shell/assets/activities.svg file's content.)
 - icon: Papirus - [gnome-look](https://www.gnome-look.org/p/1166289), [github](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
 - font: SF Pro - [Apple](https://developer.apple.com/fonts/)
 ```sh
@@ -104,3 +105,7 @@ mv Fonts/ SF\ Pro/ # rename
 ## Install apps
 - Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries) - download Releases, in folder execute `./mangohud-setup.sh install`, then copy `MangoHud.conf` into `~/.config/MangoHud`
 - Wine: [Wine Dependency Hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
+- ProtonUp-Qt
+- Steam, Lutris
+- Brave, Spotify
+- JetBrains
