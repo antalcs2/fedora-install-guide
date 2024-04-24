@@ -112,8 +112,10 @@ Or alternatively use the `theme_icon_font.sh` script.
 ## Install apps
 - Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries) - download Releases, in folder execute `./mangohud-setup.sh install`, then copy `MangoHud.conf` into `~/.config/MangoHud`
 - Wine: [Wine Dependency Hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
-- ProtonUp-Qt
-- Steam, Lutris - CS2 launch options: `mangohud %command% -allow_third_party_software`
+- ProtonUp-Qt: from Gnome Software (flathub)
+- Steam: `sudo dnf install steam`
+- CS2 launch options: `mangohud %command% -allow_third_party_software` 
+- Lutris: `sudo dnf install lutris`
 - Brave: https://brave.com/linux/
 ```sh
 sudo dnf install dnf-plugins-core
@@ -121,5 +123,5 @@ sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.co
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser
 ```
-- Spotify
+- Spotify: from Gnome Software (flathub)
 - JetBrains
