@@ -39,7 +39,9 @@ This has to be done with every kernel update, dkms seems to not be working prope
 sudo dnf install kernel-devel # needs the kernel headers
 git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
 cd rtl*
-sudo make && make install
+sudo make
+sudo install -p -m 644 88XXau.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless/
+sudo depmod -a $(uname -r)
 ```
 
 ## NVIDIA
@@ -51,8 +53,10 @@ sudo dnf install akmod-nvidia
 sudo dnf install xorg-x11-drv-nvidia-cuda #optional for cuda/nvdec/nvenc support
 ```
 - wait 5 minutes
-- once built, `modinfo -F version nvidia` return the current driver version
+- once built, `modinfo -F version nvidia` returns the current driver version
 - `sudo reboot`
+
+This way, akmod will rebuild the driver after each kernel update. (Make sure to reboot after 5 minutes when the kernel is updated, so the building can be finished!)
 
 ## Media Codecs
 - https://rpmfusion.org/Howto/Multimedia
@@ -89,6 +93,7 @@ Extension List
 [QSTweak] Quick Setting Tweaker
 spotify-tray
 User Themes
+Weeks Start on Monday Again...
 Window title is back
 ```
 
