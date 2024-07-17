@@ -79,6 +79,13 @@ cd Templates/
 touch "New Text Document.txt"
 ```
 
+## Mount secondary drive
+- With the UUID from `lsblk -f`, insert into `/etc/fstab`:
+`UUID=youruuid /media/Data  ext4    defaults,nofail 0 0`
+- Add ownership with:
+`sudo chown youruser:youruser /media/Data -R`
+- For the drive to appear in Nautilus: `Other locations` -> Click on the drive -> Three dots in the search bar -> Add to bookmark.
+
 ## Gnome
 
 ### Extensions
