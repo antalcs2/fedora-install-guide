@@ -25,7 +25,7 @@ sudo nano /etc/gdm/custom.conf
 - https://rpmfusion.org/Configuration
 - `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 - `sudo dnf config-manager --enable fedora-cisco-openh264`
-- `sudo dnf groupupdate core`
+- `sudo dnf update @core`
 
 ## Update
 - `sudo dnf update`
@@ -62,8 +62,8 @@ This way, akmod will rebuild the driver after each kernel update. (Make sure to 
 - https://rpmfusion.org/Howto/Multimedia
 - switch to full ffmpeg: `sudo dnf swap ffmpeg-free ffmpeg --allowerasing`
 - `sudo dnf groupupdate multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin`
-- `sudo dnf groupupdate sound-and-video`
-- hardware accelerated codec: `sudo dnf install nvidia-vaapi-driver`
+- `sudo dnf update @sound-and-video`
+- hardware accelerated codec: `sudo dnf install libva-nvidia-driver.{i686,x86_64}`
 
 ## Flatpak
 - `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
@@ -136,4 +136,4 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser
 ```
 - Spotify: from Gnome Software (flathub)
-- JetBrains
+- VLC media player: `sudo dnf install vlc`
