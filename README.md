@@ -1,4 +1,7 @@
 # Post Fedora Install Guide
+```sh
+git clone https://github.com/tsoby02/fedora-install-guide
+```
 
 ## DNF config
 - `sudo nano /etc/dnf/dnf.cong`
@@ -21,16 +24,15 @@ sudo nano /etc/gdm/custom.conf
 - show: `sudo grub2-editenv - unset menu_auto_hide`
 - hide: `sudo grub2-editenv - set menu_auto_hide=1`
 
+## Update
+- `sudo dnf upgrade --refresh`
+- `sudo reboot`
+
 ## RPM Fusion
 - https://rpmfusion.org/Configuration
 - `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 - `sudo dnf config-manager --enable fedora-cisco-openh264`
 - `sudo dnf update @core`
-
-## Update
-- `sudo dnf update`
-- `sudo dnf upgrade --refresh`
-- `sudo reboot`
 
 ## Connect to Internet
 https://github.com/aircrack-ng/rtl8812au
@@ -105,26 +107,21 @@ Window title is back
 ```
 
 ### Theme, icons, font
-- create .themes, .fonts, .icons folders in /home
 - theme: WhiteSur - [gnome-look](https://www.gnome-look.org/p/1403328), [github](https://github.com/vinceliuice/WhiteSur-gtk-theme) (To change the activities icon on the left side of the top bar, modify the `Whitesur/Whitesur-Dark/gnome-shell/assets/activities.svg file's content.)
 - icon: Papirus - [gnome-look](https://www.gnome-look.org/p/1166289), [github](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
 - font: SF Pro - [Apple](https://developer.apple.com/fonts/)
-```sh
-7z x SF-Pro.dmg
-cd SFProFonts/
-7z x "SF Pro Fonts.pkg"
-7z x Payload~
-cd Library
-mv Fonts/ SF\ Pro/ # rename
-# then move "SF Pro" to .icons
-```
+- terminal font: JetBrainsMono Nerd Font - [github](https://github.com/JetBrains/JetBrainsMono)
 
-Or alternatively use the `theme_icon_font.sh` script.
+- install 7z beforehand: `sudo dnf install p7zip p7zip-plugins`
+- use the `theme_icon_font.sh` script: `/bin/bash -c "$(wget https://raw.githubusercontent.com/tsoby02/fedora-install-guide/refs/heads/main/theme_icon_font.sh)"`
 
-## Install apps
-- Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries) - download Releases, in folder execute `./mangohud-setup.sh install`, then copy `MangoHud.conf` into `~/.config/MangoHud`
+## Installing apps
+- Btrfs Assistant: [Guide](https://knowledgebase.frame.work/en_us/fedora-system-restore-root-snapshots-using-btrfs-assistant-rkHNxajS3)
 - Wine: [Wine Dependency Hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
 - ProtonUp-Qt: from Gnome Software (flathub)
+- Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries)
+    - download Releases and, inside the folder, execute `./mangohud-setup.sh install`
+    - `cd ~/.config/MangoHud/ && wget https://raw.githubusercontent.com/tsoby02/fedora-install-guide/refs/heads/main/MangoHud.conf`
 - Steam: `sudo dnf install steam`
 - CS2 launch options: `mangohud %command% -allow_third_party_software` 
 - Lutris: `sudo dnf install lutris`
@@ -136,4 +133,5 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser
 ```
 - Spotify: from Gnome Software (flathub)
+- Discord: `sudo dnf install discord`
 - VLC media player: `sudo dnf install vlc`

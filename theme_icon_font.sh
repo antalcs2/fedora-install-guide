@@ -1,10 +1,18 @@
+# downloading and installing the JetBrainsMono Nerd Font
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+
+# installing the San Francisco Pro font from Apple
+cd ~/Downloads/
+wget https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg
+
 # check if font file is downloaded to ~/Downloads/
 if [ ! -f ~/Downloads/SF-Pro.dmg ]
 then
-	echo "ERROR: SF-Pro.dmg is not downloaded to the Downloads folder. Download it before proceeding!"
+	echo "ERROR: SF-Pro.dmg is not downloaded to the Downloads folder!"
 	exit 1
 fi
 
+# create folders
 cd ~/
 mkdir .themes
 mkdir .icons
