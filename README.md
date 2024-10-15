@@ -35,15 +35,17 @@ sudo nano /etc/gdm/custom.conf
 - `sudo dnf update @core`
 
 ## Connect to Internet
-https://github.com/aircrack-ng/rtl8812au
-This has to be done with every kernel update, dkms seems to not be working properly:
+https://github.com/morrownr/8821au-20210708
+This will install the driver and will add to dkms, which will rebuild the driver after every kernel update:
 ```sh
-sudo dnf install kernel-devel # needs the kernel headers
-git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
-cd rtl*
-sudo make
-sudo install -p -m 644 88XXau.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless/
-sudo depmod -a $(uname -r)
+sudo dnf update
+sudo reboot
+sudo dnf install git dkms kernel-devel # dependencies
+cd ~/Downloads/
+git clone https://github.com/morrownr/8821au-20210708.git
+cd ~/Downloads/8821au-*
+sudo ./install-driver.sh
+sudo reboot
 ```
 
 ## NVIDIA
@@ -52,7 +54,7 @@ sudo depmod -a $(uname -r)
 ```sh
 sudo dnf upgrade # and reboot if you are not on the latest kernel
 sudo dnf install akmod-nvidia
-sudo dnf install xorg-x11-drv-nvidia-cuda #optional for cuda/nvdec/nvenc support
+sudo dnf install xorg-x11-drv-nvidia-cuda # optional for cuda/nvdec/nvenc support
 ```
 - wait 5 minutes
 - once built, `modinfo -F version nvidia` returns the current driver version
