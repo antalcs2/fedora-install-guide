@@ -4,7 +4,7 @@ git clone https://github.com/tsoby02/fedora-install-guide
 ```
 
 ## DNF config
-- `sudo nano /etc/dnf/dnf.cong`
+- `sudo nano /etc/dnf/dnf.conf`
 - Add:
 ```sh
 #added for speed
@@ -36,6 +36,7 @@ sudo nano /etc/gdm/custom.conf
 
 ## Connect to Internet
 https://github.com/morrownr/8821au-20210708
+
 This will install the driver and will add to dkms, which will rebuild the driver after every kernel update:
 ```sh
 sudo dnf update
