@@ -1,7 +1,4 @@
 # Post Fedora Install Guide
-```sh
-git clone https://github.com/tsoby02/fedora-install-guide
-```
 
 ## DNF config
 - `sudo nano /etc/dnf/dnf.conf`
