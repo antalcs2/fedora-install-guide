@@ -18,12 +18,6 @@ mkdir .themes
 mkdir .icons
 mkdir .fonts
 
-# theme
-cd ~/Downloads/
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-tar -xvf ~/Downloads/WhiteSur-gtk-theme/release/WhiteSur-Dark.tar.xz
-mv -v ~/Downloads/WhiteSur-Dark/ ~/.themes
-
 # icon
 cd ~/Downloads/
 git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
@@ -43,5 +37,4 @@ mv "SF Pro" ~/.fonts
 cd ~/Downloads/
 rm -fv SF-Pro.dmg
 rm -rfv SFProFonts/
-rm -rfv WhiteSur-gtk-theme/
 rm -rfv papirus-icon-theme/
