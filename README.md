@@ -157,6 +157,7 @@ swapon # to verify
 ## Installing apps
 - Btrfs Assistant: [Guide](https://knowledgebase.frame.work/en_us/fedora-system-restore-root-snapshots-using-btrfs-assistant-rkHNxajS3)
 - Wine: [Wine Dependency Hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
+    - use `sudo dnf install wine --skip-unavailable` to skip a few unavailable packages
 - ProtonUp-Qt: from Gnome Software (flathub)
 - Mangohud: [github](https://github.com/flightlessmango/MangoHud?tab=readme-ov-file#installation---pre-packaged-binaries)
     - download Releases and, inside the folder, execute `./mangohud-setup.sh install`
